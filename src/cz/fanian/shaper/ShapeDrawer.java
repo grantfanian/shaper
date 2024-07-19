@@ -30,21 +30,14 @@ public class ShapeDrawer extends JComponent {
             g2d.setColor(Color.black);
             g2d.setBackground(Color.white);
 
-            double scale = (double) this.getWidth() / 2;
-
-            float thickness = 5; // px
-            g2d.setStroke(new BasicStroke(thickness / (float) scale));
-
             Rectangle2D bounds = currentShape.getBounds2D();
 
-            var transform = new AffineTransform();
+            double scale = this.getWidth() / Double.max(Double.max(bounds.getWidth(), bounds.getHeight()), 1);
+            // scale to 1, or scale to fit if shape is larger (it still shouldn't be)
 
-            transform.scale(scale, scale);
-            transform.translate(-bounds.getX() / scale, -bounds.getY());
+            g2d.scale(scale, scale);
 
-            g2d.setTransform(transform);
-
-            g2d.draw(currentShape);
+            g2d.fill(currentShape);
         } else {
             g2d.clearRect(0, 0, getWidth(), getHeight());
         }
