@@ -5,6 +5,7 @@ import cz.fanian.shaper.shapes.Shape;
 import static cz.fanian.shaper.util.MapFormatter.formatMap;
 
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
 import java.io.IOException;
 
 public class Shaper extends JDialog {
