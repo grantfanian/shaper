@@ -22,10 +22,6 @@ public class ShapeDrawer extends JComponent {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g.create();
         if (currentShape != null) {
-
-            System.out.println(currentShape.getBounds2D());
-
-
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             g2d.setColor(Color.black);
             g2d.setBackground(Color.white);
