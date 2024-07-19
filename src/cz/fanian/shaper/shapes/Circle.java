@@ -54,7 +54,7 @@ public class Circle extends Shape {
 
     @Override
     public java.awt.Shape to2D() {
-        return new java.awt.geom.Ellipse2D.Double(radius, radius, radius, radius);
+        return new java.awt.geom.Ellipse2D.Double(0, 0, radius, radius);
     }
 
     @Override
