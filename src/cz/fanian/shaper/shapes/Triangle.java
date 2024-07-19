@@ -4,6 +4,7 @@ import cz.fanian.shaper.InsufficientDataException;
 import cz.fanian.shaper.InvalidShapeException;
 
 import java.awt.geom.Path2D;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -85,11 +86,11 @@ public class Triangle extends Shape {
         // => x = (b^2 + c^2 - a^2) / 2c
         Path2D path = new Path2D.Double();
         path.moveTo(0, 0);
-        path.moveTo(c, 0);
-        double Cx = (pow(b, 2) + pow(c, 2) - pow(a, 2)) / (2 * c);
-        double Cy = pow(a, 2) - pow((Cx - c), 2);
-        path.moveTo(Cx, Cy);
-        path.moveTo(0, 0);
+        path.lineTo(c, 0);
+        double Cx = (pow(b, 2) + pow(c, 2) - pow(a, 2)) / (2*c);
+        double Cy = (pow(a, 2) - pow((Cx - c), 2)) * 2;
+        path.lineTo(Cx, Cy);
+        path.lineTo(0, 0);
         return path;
     }
 
