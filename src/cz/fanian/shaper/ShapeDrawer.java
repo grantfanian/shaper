@@ -27,11 +27,12 @@ public class ShapeDrawer extends JComponent {
             g2d.setBackground(Color.white);
 
             Rectangle2D bounds = currentShape.getBounds2D();
+            double longestDimension = Double.max(bounds.getWidth(), bounds.getHeight());
+            double scale = this.getWidth() / Double.max(longestDimension, 1);
+            // scale to 1, or scale to fit if shape is larger (it shouldn't be)
 
-            double scale = this.getWidth() / Double.max(Double.max(bounds.getWidth(), bounds.getHeight()), 1);
-            // scale to 1, or scale to fit if shape is larger (it still shouldn't be)
-
-            g2d.scale(scale, scale);
+            g2d.scale(scale, -scale); // flip vertically so y increase = up like in cartesian
+            g2d.translate(0, -Double.max(longestDimension, 1));
 
             g2d.fill(currentShape);
         } else {
