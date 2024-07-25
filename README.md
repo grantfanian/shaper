@@ -14,6 +14,7 @@ The app currently supports two shape sources:
 - A source for testing that reads JSON objects from `shaperTestData.ndjson` (hardcoded in `Main.java`; starts over on file end)
 
 ## JSON-serialized Shape examples
+A triangle (type gets inferred from present properties)
 ```json
 {
   "a": 0.5,
@@ -21,6 +22,8 @@ The app currently supports two shape sources:
   "c": 0.9
 }
 ```
+
+A circle
 ```json
 {
   "area": 0.5775338913002781,
@@ -28,5 +31,13 @@ The app currently supports two shape sources:
   "type": "CIRCLE"
 }
 ```
-```
+
+A rectangle
+```json
+{
+  "area": 0.3608665584372293,
+  "width": 0.6423069849621419,
+  "type": "RECTANGLE",
+  "height": 0.5618287935300892
+}
 ```
