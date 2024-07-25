@@ -17,7 +17,7 @@ public class Main {
                     "Warning", JOptionPane.WARNING_MESSAGE);
             System.out.println(message);
 
-            api = NdJsonAPI.open("testData.ndjson");
+            api = NdJsonAPI.open("shaperTestData.ndjson");
         } else {
             api = new PostAPI(URI.create(endpoint));
         }
